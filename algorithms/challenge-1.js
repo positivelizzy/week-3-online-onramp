@@ -14,21 +14,12 @@ function romanToDecimal(roman) {
     var arr = roman.split('')
     for(var item in arr){
         sum+= value[arr[item]]
-      if(inprocess === ''){
-           inprocess = value[arr[item]]
-           count = 1
-       }else if(inprocess !== arr[item]){
+        if(inprocess !== arr[item]){
             if(inprocess < value[arr[item]]){
-                sum-=count * inprocess * 2
-                inprocess = value[arr[item]]
-                count =1
-            }else {
-                inprocess = value[arr[item]]
-                count=1
+                sum-=inprocess * 2
             }
-       }else {
-           count++
        }
+       inprocess = value[arr[item]]
     }
     return sum
 }
@@ -50,3 +41,8 @@ console.log(romanToDecimal('DCXXV') === 625)
 console.log(romanToDecimal('XCIX') === 99)
 console.log(romanToDecimal('XXVIII') === 28)
 console.log(romanToDecimal('XII') === 12)
+console.log(romanToDecimal('MCMXLIV') === 1944)
+console.log(romanToDecimal('DCXXV') === 625)
+console.log(romanToDecimal('XCIX') === 99)
+console.log(romanToDecimal('XCVIII') === 98)
+console.log(romanToDecimal('XI') === 11)
