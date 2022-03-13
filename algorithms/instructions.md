@@ -149,6 +149,7 @@ For example.
 
 ```js
 decodeMorse("-.. . -.-. .- -.. . ...-");
+decodeMorse("-.. . -.-. .- -.. . ...-   -.. . -.-. .- -.. . ...-   -.. . -.-. .- -.. . ...-");
 //should return "DECADEV"
 ```
 
